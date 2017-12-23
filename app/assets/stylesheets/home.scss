@@ -194,4 +194,15 @@ header {
   h2 {
     margin-bottom: 3rem !important;
   }
+  .sponsor-row{
+    padding-bottom: 3rem;
+
+    img {
+      filter: grayscale(100%);
+      transition-duration: 0.2s;
+      &:hover {
+        filter: unset;
+      }
+    }
+  }
 }
