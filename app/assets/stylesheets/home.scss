@@ -45,11 +45,11 @@ font-size: 2rem; }
 font-size: 3rem; } }
 
 .showcase .showcase-text {
-padding: 4rem !important;
+  padding: 4rem 0rem 4rem 4rem !important;
 }
 
 .showcase .showcase-img {
-  min-height: 30rem;
+  min-height: 25rem;
 background-size: cover; }
 
 @media (min-width: 768px) {
@@ -86,7 +86,7 @@ footer.footer {
 /* Custom CSS Begins Here */
 
 $color-primary: #007bff;
-
+$color-very-light-primary: #ddedff;
 
 a.btn-primary-outline {
   display: block;
@@ -128,7 +128,6 @@ a.btn-primary-outline {
 section {
   padding-top: 4rem;
   padding-bottom: 4rem;
-  border-bottom: $color-primary 2px solid;
 }
 
 header {
@@ -174,11 +173,19 @@ header {
   }
 }
 
-.showcase a.btn-primary-outline {
-  padding: 1rem;
-  margin-top: 2rem;
+// For the showcase section
+.showcase {
+  padding: 0 !important;
+  background-color: $color-very-light-primary;
+  .showcase-text:nth-child(odd){
+    padding-left: 0 !important;
+    padding-right: 4rem !important;
+  }
+  a.btn-primary-outline {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
 }
-
 
 //For Sponsor Section
 .sponsors {

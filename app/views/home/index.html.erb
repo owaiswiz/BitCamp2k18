@@ -1,8 +1,8 @@
 <header class="masthead text-white text-center">
   <div class="container">
     <div class="row">
-    <%= render "shared/bitcamp_animation" %>
-  </div>
+      <%= render "shared/bitcamp_animation" %>
+    </div>
 </header>
 <!-- Icons Grid -->
 <section class="features-icons bg-light text-center">
@@ -46,28 +46,28 @@
 
 <!-- Image Showcases -->
 <section class="showcase">
-  <div class="row no-gutters">
-    <div class="col-sm-6 col-lg-6 my-auto showcase-text">
-      <h2>EVENTS</h2>
-      <p class="lead mb-0">
-        <span>
-          Special. Unforgettable. Spectacular. Fun is and should be the priority one.
-        </span>
-        <a class="btn btn-primary-outline viewEventsButton" href="/events">View All Events</a>
-      </p>
+  <div class="container">
+    <div class="row no-gutters">
+      <div class="col-sm-6 col-lg-6 my-auto showcase-text">
+        <h2>EVENTS</h2>
+        <p class="lead mb-0">
+          <span>
+            Special. Unforgettable. Spectacular. Fun is and should be the priority one.
+          </span>
+          <a class="btn btn-primary-outline" href="/events">View All Events</a>
+        </p>
+      </div>
+      <div class="col-lg-6 col-sm-6  text-white showcase-img" style="background-image: url('<%= image_path('events.jpg') %>');"></div>
     </div>
-    <div class="col-lg-6 col-sm-6  text-white showcase-img" style="background-image: url('<%= image_path('events.jpg') %>');"></div>
-  </div>
-  <div class="container-fluid p-0">
     <div class="row no-gutters">
       <div class="col-lg-6 col-sm-6 text-white showcase-img" style="background-image: url('<%= image_path('participate.png') %>');"></div>
       <div class="col-sm-6 col-lg-6 my-auto showcase-text">
         <h2>PARTICIPATE</h2>
         <p class="lead mb-0 participateShowcase">
           <span>
-            Participating in really simple. Just Complete Registration of your team by clicking the button below.
+            Participating in BitCamp is really simple. Just Complete Registration of your team by clicking the button below.
           </span>
-          <a class="btn btn-primary-outline participateButton" href="/register_team">Register Your Team</a>
+          <a class="btn btn-primary-outline" href="/register_team">Register Your Team</a>
         </p>
       </div>
     </div>
@@ -76,7 +76,7 @@
         <h2>WHERE ?</h2>
         <p class="lead mb-0">
           <span>
-            Located in the heart of Navi Mumbai, Ramrao Adik insitutue of technology has great infrastructure to support the various needs of a modern hackathon.
+            Located in the heart of Navi Mumbai, Ramrao Adik Insitutue Of Technology has great infrastructure to support the needs of a modern hackathon.
           </span>
           <a class="btn btn-primary-outline viewLocation" href="/view_location">View Location on Map</a>
         </p>
