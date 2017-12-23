@@ -3,7 +3,7 @@
 ### Installation and Running
 
 * Make sure you have installed Ruby (2.4.0 or greater) - [Install using rvm](https://rvm.io/rvm/install)
-* Make sure you have a function postgres installation
+* Make sure you have a functional postgres installation
 
 ### Only for the first time
 1) Clone the repo && cd into it

@@ -21,7 +21,6 @@ font-weight: 700; }
 header.masthead {
   position: relative;
   background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -100,10 +99,20 @@ a.btn-primary-outline {
     letter-spacing: 2px;
   }
 }
-
 .w64 {
   max-width: 64px;
 }
+
+//For Navbar
+.navbar .navbar-brand {
+  color: $color-primary !important;
+  margin-right: 15rem;
+}
+.navbar .btn-primary-outline {
+  padding: 0.7rem;
+  letter-spacing: initial !important;
+}
+
 
 section {
   padding-top: 4rem;
