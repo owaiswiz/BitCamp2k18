@@ -46,7 +46,8 @@ font-size: 2rem; }
 font-size: 3rem; } }
 
 .showcase .showcase-text {
-padding: 3rem; }
+padding: 4rem !important;
+}
 
 .showcase .showcase-img {
   min-height: 30rem;
@@ -54,11 +55,11 @@ background-size: cover; }
 
 @media (min-width: 768px) {
   .showcase .showcase-text {
-padding: 7rem; } }
+padding: 4rem; } }
 
 .features-icons {
-  padding-top: 7rem;
-padding-bottom: 7rem; }
+  padding-top: 4rem;
+padding-bottom: 4rem; }
 .features-icons .features-icons-item {
 max-width: 20rem; }
 .features-icons .features-icons-item .features-icons-icon {
@@ -69,34 +70,13 @@ font-size: 4.5rem; }
 font-size: 5rem; }
 
 .testimonials {
-  padding-top: 7rem;
-padding-bottom: 7rem; }
+  padding-top: 4rem;
+padding-bottom: 4rem; }
 .testimonials .testimonial-item {
 max-width: 18rem; }
 .testimonials .testimonial-item img {
   max-width: 12rem;
 box-shadow: 0px 5px 5px 0px #adb5bd; }
-
-.call-to-action {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-.call-to-action .overlay {
-  position: absolute;
-  background-color: #212529;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-}
 
 footer.footer {
   padding-top: 4rem;
@@ -105,6 +85,31 @@ footer.footer {
 
 
 /* Custom CSS Begins Here */
+
+$color-primary: #007bff;
+
+
+a.btn-primary-outline {
+  display: block;
+  border-color: $color-primary;
+  color: $color-primary;
+  transition: all 0.2s !important;
+  &:hover,&:active,&:focus {
+    background-color: $color-primary;
+    color: white;
+    letter-spacing: 2px;
+  }
+}
+
+.w64 {
+  max-width: 64px;
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: $color-primary 2px solid;
+}
 
 header {
   &.masthead {
@@ -133,3 +138,33 @@ header {
   }
 }
 
+
+// For the Icons Grid
+.features-icons {
+  h2 {
+    margin-bottom: 3rem;
+  }
+
+  .features-icons-icon {
+    margin: 0 auto 3rem auto;
+
+    img {
+      margin: auto;
+    }
+  }
+}
+
+.showcase a.btn-primary-outline {
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+
+//For Sponsor Section
+.sponsors {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  h2 {
+    margin-bottom: 3rem !important;
+  }
+}
