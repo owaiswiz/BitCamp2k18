@@ -104,13 +104,24 @@ a.btn-primary-outline {
 }
 
 //For Navbar
-.navbar .navbar-brand {
-  color: $color-primary !important;
-  margin-right: 15rem;
-}
-.navbar .btn-primary-outline {
-  padding: 0.7rem;
-  letter-spacing: initial !important;
+.navbar {
+  .navbar-brand {
+    color: $color-primary !important;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+  }
+  .btn-primary-outline {
+    letter-spacing: initial !important;
+    margin-left: 1rem;
+  }
+  a {
+    padding: 0.7rem;
+  }
+
+  .nav-pills li.nav-item {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 
