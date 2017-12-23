@@ -1,9 +1,10 @@
+
 # Readme
 
-### Installation and Running
+### Installation 
 
 * Make sure you have installed Ruby (2.4.0 or greater) - [Install using rvm](https://rvm.io/rvm/install)
-* Make sure you have a functional postgres installation
+* Make sure you have a functional PostgreSQL installation
 
 ### Only for the first time
 1) Clone the repo && cd into it
@@ -20,7 +21,7 @@
 
 
 * Main Application layout is in app/views/layouts/application.html.erb
-* Partials (navbar,footer) are location in app/views/shared
+* Partials (navbar,footer) are located in app/views/shared
 
 * Views are located in app/views 
 	* Home Page - Index => app/views/home/index.html.erb
@@ -31,5 +32,5 @@
 * Javascripts are located in app/assets/javascripts
 	* Everything related to home page (index,contact,about) => app/assets/stylesheets/home.js
 
-* Stylsheets are situated in app/assets/stylesheets
+* Stylsheets are located in app/assets/stylesheets
 	* Everything related to home page (index, contact, about) => app/assets/stylesheets/home.scss
