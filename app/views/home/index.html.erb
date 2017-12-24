@@ -86,6 +86,9 @@
   </div>
 </section>
 
+<!-- Previous Bitcamps -->
+<%= render 'previous_bitcamp' %>
+
 <!-- Testimonials -->
 <section class="testimonials text-center bg-light">
   <div class="container">
@@ -116,37 +119,20 @@
   </div>
 </section>
 
-
 <!-- Sponsors -->
 <section class="sponsors text-center">
   <div class="container">
     <h2 class="mb-5">OUR SPONSORS</h2>
-    <div class="row sponsor-row">
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_1.png' %>" alt="">
+    <div class="sponsor-row row">
+      <div class="col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+          <a href="http://get.tech" target="_blank">
+            <img class="s-logo" src="<%= image_path 'sponsor_1.png' %>" />
+          </a>
       </div>
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_2.png' %>" alt="">
-      </div>
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_3.png' %>" alt="">
-      </div>
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_4.png' %>" alt="">
-      </div>
-    </div>
-    <div class="row sponsor-row">
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_5.png' %>" alt="">
-      </div>
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_6.png' %>" alt="">
-      </div>
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_7.png' %>" alt="">
-      </div>
-      <div class="col-sm-3 col-lg-3">
-        <img class="w64" src="<%= image_path 'sponsor_8.png' %>" alt="">
+      <div class="col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
+          <a href="https://hackerearth.com" target="_blank">
+            <img class="s-logo" src="<%= image_path 'sponsor_2.png' %>" />
+          </a>
       </div>
     </div>
   </div>
