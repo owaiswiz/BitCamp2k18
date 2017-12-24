@@ -80,6 +80,20 @@ box-shadow: 0px 5px 5px 0px #adb5bd; }
 footer.footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
+
+  .footer-icon-list-item {
+    
+    a {
+      transition-duration: 0.2s;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    img{
+      max-width: 48px;
+    }
+  }
 }
 
 
@@ -117,7 +131,7 @@ a.btn-primary-outline {
     margin-left: 1rem;
   }
   a {
-    padding: 0.7rem;
+    padding: 0.5rem;
   }
 
   .nav-pills li.nav-item {
