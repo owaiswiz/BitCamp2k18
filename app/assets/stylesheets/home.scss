@@ -99,9 +99,6 @@ a.btn-primary-outline {
     letter-spacing: 2px;
   }
 }
-.w64 {
-  max-width: 64px;
-}
 
 //For Navbar
 .navbar {
@@ -187,6 +184,17 @@ header {
   }
 }
 
+// For the Previous Bitcamp Section
+.previous-bitcamp {
+
+  .carousel-inner {
+    width: 100%;
+    max-width: 1000px;
+    height: 30rem;
+    margin: auto;
+  } 
+}
+
 //For Sponsor Section
 .sponsors {
   padding-top: 4rem;
@@ -198,11 +206,11 @@ header {
   .sponsor-row{
     padding-bottom: 3rem;
 
-    img {
-      filter: grayscale(100%);
+    img.s-logo {
+      max-width: 128px;
       transition-duration: 0.2s;
       &:hover {
-        filter: unset;
+        transform: scale(1.5);
       }
     }
   }
