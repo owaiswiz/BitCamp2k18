@@ -4,10 +4,9 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
  */
 
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
-
 body {
-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif !important;
+}
 
 h1,
 h2,
@@ -15,8 +14,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-font-weight: 700; }
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700; 
+}
 
 header.masthead {
   position: relative;
@@ -166,6 +166,7 @@ nav.navbar {
     color: white !important;
     letter-spacing: 1px;
     font-size: 1.3rem;
+    font-weight: lighter !important;
     .sponsored-by {
       font-size: 65%;
       color: white;
@@ -187,6 +188,7 @@ nav.navbar {
   a {
     color: white;
     padding: 0.5rem;
+    font-weight: lighter;
   }
 
   .nav-pills li.nav-item {
