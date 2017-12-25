@@ -132,28 +132,81 @@ a.btn-primary-outline {
 }
 
 //For Navbar
-.navbar {
+
+//For Responsive Navbar 
+@media (max-width: 1199px) {
+  nav.navbar {
+
+    ul.nav {
+      display: block !important;
+      text-align: center;
+
+      li.nav-item {
+        display: table !important;
+        margin: 2em auto;
+      }
+    }
+  }
+}
+nav.navbar {
+  background-color: $color-primary;
+  color: white;
+
+  .navbar-toggler {
+    border-color: white;
+    border-width: 2px;
+    cursor: pointer;
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32'
+      xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2'
+      stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
   .navbar-brand {
-    color: $color-primary !important;
+    color: white !important;
     letter-spacing: 1px;
     font-size: 1.3rem;
     .sponsored-by {
       font-size: 65%;
-      color: gray;
+      color: white;
       letter-spacing: 0px;
     }
   }
   .btn-primary-outline {
     letter-spacing: initial !important;
     margin-left: 1rem;
+    color: white;
+    border-color: white;
+    border-radius: 2%;
+    border-width: 2px;
+    &:hover {
+      background-color: white;
+      color: $color-primary;
+    }
   }
   a {
+    color: white;
     padding: 0.5rem;
   }
 
   .nav-pills li.nav-item {
     margin-left: 1rem;
     margin-right: 1rem;
+    &:not(.button-link) {
+      display: inline-block;
+      text-decoration: none;
+      &:hover:after {
+        width: 100%;
+      }
+      &:after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 2px;
+        background: white;
+        transition: width .2s;
+      }
+    }
   }
 }
 
