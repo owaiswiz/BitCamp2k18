@@ -56,7 +56,7 @@ background-size: cover; }
   .showcase .showcase-text {
 padding: 4rem; } }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .showcase {
     .row:not(:last-child) .showcase-text {
       padding-bottom: 0 !important;
@@ -117,7 +117,7 @@ footer.footer {
 /* Custom CSS Begins Here */
 
 $color-primary: #2196F3;
-$color-very-light-primary: #ddedff;
+$color-primary-light: #ddedff;
 
 a.btn-primary-outline {
   display: block;
@@ -216,6 +216,9 @@ nav.navbar {
 section {
   padding-top: 4rem;
   padding-bottom: 4rem;
+  &:nth-child(even) {
+    background-color: $color-primary-light;
+  }
 }
 
 header {
@@ -264,7 +267,6 @@ header {
 // For the showcase section
 .showcase {
   padding: 0 !important;
-  background-color: $color-very-light-primary;
   .showcase-text:nth-child(odd){
     padding-left: 0 !important;
     padding-right: 4rem !important;
@@ -286,7 +288,6 @@ header {
 
 //For Sponsor Section
 .sponsors {
-  background-color: $color-very-light-primary !important;
   h2 {
     margin-bottom: 3rem !important;
   }
