@@ -157,9 +157,7 @@ nav.navbar {
     border-width: 2px;
     cursor: pointer;
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32'
-      xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2'
-      stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
     }
   }
   .navbar-brand {
@@ -168,7 +166,8 @@ nav.navbar {
     font-size: 1.3rem;
     font-weight: lighter !important;
     .sponsored-by {
-      font-size: 65%;
+      bottom: -0.50em;
+      font-size: 60%;
       color: white;
       letter-spacing: 0px;
     }
@@ -296,8 +295,9 @@ header {
       padding-bottom: 2rem;
     }
     img.s-logo {
-      max-width: 128px;
-      margin: 1rem;
+      max-width: 10rem;
+      max-height: 8rem;
+      margin: 1.5rem 1rem;
       transition-duration: 0.2s;
       &:hover {
         transform: scale(1.5);
