@@ -2,27 +2,38 @@
   <div class="container">
     <h2 class="mb-5">WHAT PEOPLE ARE SAYING...</h2>
     <div class="row">
-      <div class="col-sm-4 col-lg-4">
+      <div class="col-lg-4">
         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-          <img class="img-fluid rounded-circle mb-3" src="<%= image_path 'testimonials-1.jpg' %>" alt="">
-          <h5>Person 1</h5>
-          <p class="font-weight-light mb-0">Todo testimonial 1</p>
+          <img class="img-fluid rounded-circle mb-3 testimonial-1" src="<%= image_path 'testimonials-1.jpg' %>" alt="">
+          <h3>Lalima Sharda</h3>
+          <blockquote class="testimonial-text font-weight-light mb-0">
+            <p>... One of my most prized take aways from the competition were the experiences and all the new tricks I learnt during the 24 hours of coding ...</p>
+          </blockquote>
+          <a class="btn btn-primary-outline read-more-button" data-toggle="modal" data-target="#testimonial-readmore-modal" data-name="Lalima Sharda" data-text="<br>Bitcamp 2017 was my very first hackathon, and it surely proved to be a great start with some really unforgettable moments.<br><br>One of my most prized take aways from the competition were the experiences and all the new tricks I learnt during the 24 hours of coding. I owe it to the mentors and technical staff who were really helpful and friendly.<br><br>They introduced us to new technologies and concepts and their experience definitely guided us to convert our ideas into the final product. <br><br>I'll admit that sitting continuously, staring at the screen and typing does get stressful at times, but the organisation saw to it that each participant was made as comfortable as possible. <br><br>The food was amazing and the organisers made sure that there were no technical shortcomings. I also got to meet students from colleges all around Mumbai, which was a great opportunity for me to share ideas and learn about new things.<br>" href="/read_more">Read More</a>
         </div>
       </div>
-      <div class="col-sm-4 col-lg-4">
+      <div class="col-lg-4">
         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
           <img class="img-fluid rounded-circle mb-3" src="<%= image_path 'testimonials-2.jpg' %>" alt="">
-          <h5>Person 2</h5>
-          <p class="font-weight-light mb-0">Todo testimonial 2</p>
+          <h3>Person 2</h3>
+          <blockquote class="testimonial-text font-weight-light mb-0">
+            <p>... Another testimonial placeholder, todo later...</p>
+          </blockquote>
+          <a class="btn btn-primary-outline read-more-button" href="/read_more">Read More</a>
         </div>
       </div>
-      <div class="col-sm-4 col-lg-4">
+      <div class="col-lg-4">
         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
           <img class="img-fluid rounded-circle mb-3" src="<%= image_path 'testimonials-3.jpg' %>" alt="">
-          <h5>Person 3</h5>
-          <p class="font-weight-light mb-0">Todo testimonial 3</p>
+          <h3>Person 3</h3>
+          <blockquote class="testimonial-text font-weight-light mb-0">
+            <p>... One of my most prized take aways from the competition were the experiences and all the new tricks I learnt during the 24 hours of coding ...</p>
+          </blockquote>
+          <a class="btn btn-primary-outline read-more-button" href="/read_more">Read More</a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<%= render 'readmore' %>

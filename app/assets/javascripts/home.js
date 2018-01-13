@@ -202,3 +202,14 @@ function countdown() {
 
   setTimeout(countdown, 1000);
 }
+
+function handleReadMoreModal() { // eslint-disable-line no-unused-vars 
+  $('#testimonial-readmore-modal').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget);
+    var name = button.data('name');
+    var text = button.data('text');
+    var modal = $(this);
+    modal.find('.modal-title').html(name);
+    modal.find('.modal-body blockquote p').html(text);
+  });
+}

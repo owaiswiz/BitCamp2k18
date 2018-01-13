@@ -100,7 +100,7 @@ footer.footer {
   .row > div {
   }
   .footer-icon-list-item {
-    
+
     a {
       transition-duration: 0.2s;
       opacity: 0.7;
@@ -286,6 +286,85 @@ header {
   } 
 }
 
+// For Testimonials Section
+.testimonials {
+  .testimonial-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    .testimonial-text {
+      margin: 0;
+      padding: 10px 50px;
+      position: relative;
+      text-align: justify;
+      font-family: Georgia, serif;
+      color: #666;
+      border-radius: 5px;
+      font-style: italic;
+      text-shadow: 0 1px 0 #ECFBFF;
+      &:before, &:after {
+        content: "\201C";
+        position: absolute;
+        font-size: 80px;
+        line-height: 1;
+        color: #999;
+        font-style: normal;
+      }
+      &:before {
+        top: 0;
+        left: 10px;
+      }
+
+      &:after {
+        content: "\201D";
+        right: 10px;
+        bottom: -0.5em;
+      }
+
+    }
+    .read-more-button {
+      align-self: stretch;
+      margin: 1rem;
+      margin-top: auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+}
+
+.testimonial-text {
+  margin: 0;
+  padding: 10px 50px;
+  position: relative;
+  text-align: justify;
+  font-family: Georgia, serif;
+  color: #666;
+  border-radius: 5px;
+  font-style: italic;
+  text-shadow: 0 1px 0 #ECFBFF;
+  &:before, &:after {
+    content: "\201C";
+    position: absolute;
+    font-size: 80px;
+    line-height: 1;
+    color: #999;
+    font-style: normal;
+  }
+  &:before {
+    top: 0;
+    left: 10px;
+  }
+
+  &:after {
+    content: "\201D";
+    right: 10px;
+    bottom: -0.5em;
+  }
+
+}
+
+
 //For Sponsor Section
 .sponsors {
   h2 {
@@ -305,4 +384,24 @@ header {
       }
     }
   }
+}
+
+//For Read More - Testimonial Modal
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
 }
