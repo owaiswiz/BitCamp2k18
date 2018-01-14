@@ -127,7 +127,7 @@ a.btn-primary-outline {
   &:hover,&:active,&:focus {
     background-color: $color-primary;
     color: white;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 }
 
@@ -293,37 +293,10 @@ header {
     flex-direction: column;
     align-items: center;
     min-height: 100%;
-    .testimonial-text {
-      margin: 0;
-      padding: 10px 50px;
-      position: relative;
-      text-align: justify;
-      font-family: Georgia, serif;
-      color: #666;
-      border-radius: 5px;
-      font-style: italic;
-      text-shadow: 0 1px 0 #ECFBFF;
-      &:before, &:after {
-        content: "\201C";
-        position: absolute;
-        font-size: 80px;
-        line-height: 1;
-        color: #999;
-        font-style: normal;
-      }
-      &:before {
-        top: 0;
-        left: 10px;
-      }
-
-      &:after {
-        content: "\201D";
-        right: 10px;
-        bottom: -0.5em;
-      }
-
-    }
     .read-more-button {
+      @media (max-width: 991px) {
+        margin-bottom: 5rem;
+      }
       align-self: stretch;
       margin: 1rem;
       margin-top: auto;
@@ -331,13 +304,18 @@ header {
       padding-bottom: 1rem;
     }
   }
+
+  .row .col-lg-4:last-child {
+    .read-more-button {
+      margin-bottom: 1rem !important;
+    }
+  }
 }
 
 .testimonial-text {
   margin: 0;
-  padding: 10px 50px;
+  padding: 10px 40px;
   position: relative;
-  text-align: justify;
   font-family: Georgia, serif;
   color: #666;
   border-radius: 5px;
@@ -364,6 +342,30 @@ header {
 
 }
 
+//For Read More - Testimonial Modal
+.modal {
+  text-align: center;
+  padding: 0!important;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+  }
+  button {
+    cursor: pointer;
+  }
+  .testimonial-text {
+    text-align: justify;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
 
 //For Sponsor Section
 .sponsors {
@@ -371,9 +373,6 @@ header {
     margin-bottom: 3rem !important;
   }
   .sponsor-row{
-    &:not(:last-child) {
-      padding-bottom: 2rem;
-    }
     img.s-logo {
       max-width: 10rem;
       max-height: 8rem;
@@ -386,22 +385,3 @@ header {
   }
 }
 
-//For Read More - Testimonial Modal
-.modal {
-  text-align: center;
-  padding: 0!important;
-}
-
-.modal:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  margin-right: -4px;
-}
-
-.modal-dialog {
-  display: inline-block;
-  text-align: left;
-  vertical-align: middle;
-}
