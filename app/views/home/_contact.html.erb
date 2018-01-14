@@ -1,0 +1,49 @@
+<script>
+  document.addEventListener("turbolinks:load", function() {
+    $('.mail-to-button').on('click', function() {
+      $("#contact-modal").modal('toggle');
+    });
+  })
+</script>
+
+<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-modal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Contact</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="contact container">
+          <div class="row">
+            <div class="col-xs-1">
+              <%= fa_icon 'user' %>
+            </div>
+            <div class="col-xs-11">
+              <span class="name">Abhishek Saha</span>
+              <div class="contact-details">
+                <div class="col-sm-12">
+                  <%= fa_icon 'envelope' %>
+                  <span class="email">abhishek.saha@csirait.com</span>
+                </div>
+                <div class="col-sm-12">
+                  <%= fa_icon 'phone' %>
+                  <span class="phone">+91-9004434367</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <a class="btn btn-success mail-to-button" href="mailto:info.bitcamp@csirait.com">Email Us</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+

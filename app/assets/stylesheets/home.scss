@@ -1,9 +1,3 @@
-/*!
- * Start Bootstrap - Landing Page v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/landing-page)
- * Copyright 2013-2017 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-landing-page/blob/master/LICENSE)
- */
-
 body {
   font-family: 'Source Sans Pro', sans-serif !important;
 }
@@ -385,3 +379,37 @@ header {
   }
 }
 
+// For Contact Modal
+#contact-modal {
+  .modal-dialog {
+    min-width: 25%;
+    .modal-content {
+      .modal-body {
+        .contact {
+          .col-xs-1 {
+            font-size: 2rem;
+            margin-right: 1rem;
+          }
+          .col-xs-11 {
+            font-size: 1.1rem;
+            .name {
+              font-size: 2rem;
+            }
+            .fa {
+              margin-right: 1rem;
+            }
+
+          }
+
+        }
+        .col-xs-12 {
+          .fa {
+            margin-right: 1rem;
+            font-size: 2rem;
+          }
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
