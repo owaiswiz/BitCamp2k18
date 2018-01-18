@@ -1,0 +1,16 @@
+<% optional = optional || false %>
+<div class="team-member-block team-leader">
+  <h3>
+    Team <%= name.humanize %>
+  <%= "<small class='text-muted'>(Optional)</small>".html_safe if optional %>
+  </h3>
+  <%= f.input "#{name}_name", placeholder: 'Name', required: true%>
+  <%= f.input "#{name}_phone", placeholder: 'Mobile No', required: true%>
+  <% if name == 'leader' %>
+    <%= f.input :email, placeholder: 'Contact Email', required: true %>
+    <%= f.input :password, placeholder: 'Password', required: true %>
+    <%= f.input :password_confirmation, placeholder: 'Password Confirmation', required: true %>
+  <% end %>
+  <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: "#{name}_college_id", upload: "College ID", required: true } %>
+  <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: "#{name}_ticket", upload: "Ticket" } %>
+</div>
