@@ -1,0 +1,8 @@
+<% required = required || false %>
+<div class="file-upload">
+  <div class="file-select">
+    <div class="file-select-button" id="fileName">Upload <%= upload %></div>
+    <div class="file-select-name" id="noFile">No file chosen...</div> 
+    <%= f.input name, as: :file, input_html: { accept: '.jpg,.jpeg,.png,.bmp,.gif,.svg', class: 'chooseFile' }, required: required %>
+  </div>
+</div>

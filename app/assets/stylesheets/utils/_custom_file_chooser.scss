@@ -1,0 +1,89 @@
+@import 'utils/variables';
+
+.form-group.file {
+  margin: 0 !important;
+}
+.file-upload {
+  margin: 2rem auto;
+  transition: all .2s ease-in-out;
+  display: block;
+  text-align: center;
+  .file-select {
+    display: block;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    cursor: pointer;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    .file-select-button {
+      background: $color-primary;
+      color: white;
+      padding: 1rem;
+      display: inline-block;
+      min-width: 35%;
+    }
+    .file-select-name {
+      display: inline-block;
+      padding: 1rem;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+  &.active .file-select {
+    border-color: #3fa46a;
+    transition: all .2s ease-in-out;
+    .file-select-button {
+      background: #3fa46a;
+      color: #FFFFFF;
+      transition: all .2s ease-in-out;
+    }
+    .file-select-name {
+      color: #3fa46a;
+    }
+  }
+  .file-select {
+    input[type=file] {
+      z-index: 100;
+      cursor: pointer;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      filter: alpha(opacity = 0);
+    }
+    &.file-select-disabled {
+      opacity: 0.65;
+      &:hover {
+        cursor: default;
+        display: block;
+        border: 2px solid #dce4ec;
+        color: #34495e;
+        cursor: pointer;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 5px;
+        text-align: left;
+        background: #FFFFFF;
+        overflow: hidden;
+        position: relative;
+        .file-select-button {
+          background: #dce4ec;
+          color: #666666;
+          padding: 0 10px;
+          display: inline-block;
+          height: 40px;
+          line-height: 40px;
+        }
+        .file-select-name {
+          line-height: 40px;
+          display: inline-block;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
