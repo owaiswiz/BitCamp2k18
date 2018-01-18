@@ -19,6 +19,10 @@
     .form-inputs {
       .form-group {
         margin: 2rem auto;
+        transition: all .2s ease-in-out;
+        &:hover {
+          transform: scale(1.05);
+        }
       }
       .team-member-block {
         padding-top: 2rem;

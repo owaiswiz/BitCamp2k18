@@ -30,6 +30,7 @@
   }
   &:hover {
     transform: scale(1.05);
+    cursor: pointer;
   }
   &.active .file-select {
     border-color: #3fa46a;
@@ -45,20 +46,11 @@
   }
   .file-select {
     input[type=file] {
-      z-index: 100;
-      cursor: pointer;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      filter: alpha(opacity = 0);
+      display: none;
     }
     &.file-select-disabled {
       opacity: 0.65;
       &:hover {
-        cursor: default;
         display: block;
         border: 2px solid #dce4ec;
         color: #34495e;
