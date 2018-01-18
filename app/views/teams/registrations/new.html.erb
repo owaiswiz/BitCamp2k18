@@ -1,17 +1,28 @@
-<h2>Siaaagn up</h2>
+<script>
+  document.addEventListener("turbolinks:load", function() {
+    handleRegistrationForm();
+  })
+</script>
+<div class="form-container">
+  <div class="container">
+    <h1>REGISTER YOUR TEAM</h1>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <div class="form-inputs">
+        <%= f.input :team_name, required: true, placeholder: 'Team Name', autofocus: true %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'leader'} %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'member_1'} %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'member_2', optional: true } %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'member_3', optional: true } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: 'submit-btn' %>
+      </div>
+    <% end %>
+
+    <%= render "teams/shared/links" %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "teams/shared/links" %>
+</div>
