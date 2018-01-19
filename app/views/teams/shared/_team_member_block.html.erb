@@ -1,16 +1,26 @@
 <% optional = optional || false %>
+<% required = !optional %>
 <div class="team-member-block team-leader">
-  <h3>
-    Team <%= name.humanize %>
-  <%= "<small class='text-muted'>(Optional)</small>".html_safe if optional %>
-  </h3>
-  <%= f.input "#{name}_name", placeholder: 'Name', required: true%>
-  <%= f.input "#{name}_phone", placeholder: 'Mobile No', required: true%>
-  <% if name == 'leader' %>
-    <%= f.input :email, placeholder: 'Contact Email', required: true %>
-    <%= f.input :password, placeholder: 'Password', required: true %>
-    <%= f.input :password_confirmation, placeholder: 'Password Confirmation', required: true %>
-  <% end %>
-  <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: "#{name}_college_id", upload: "College ID", required: true } %>
-  <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: "#{name}_ticket", upload: "Ticket" } %>
+  <div class="header">
+    <h3>
+      Team <%= name.humanize %>
+    <%= "<small class='text-muted'>(Optional)</small>".html_safe if optional %>
+    </h3>
+    <% if optional %>
+      <a class="btn pull-right add-remove-member">
+        <%= fa_icon 'plus' %>
+      </a>
+    <% end %>
+  </div>
+  <div class="animated body <%= optional ? 'optional' : 'required' %>">
+    <%= f.input "#{name}_name", placeholder: 'Name', required: required %>
+    <%= f.input "#{name}_phone", placeholder: 'Mobile No', required: required %>
+    <% if name == 'leader' %>
+      <%= f.input :email, placeholder: 'Contact Email', required: required  %>
+      <%= f.input :password, placeholder: 'Password', required: required  %>
+      <%= f.input :password_confirmation, placeholder: 'Password Confirmation', required: required  %>
+    <% end %>
+    <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: "#{name}_college_id", upload: "College ID", required: required } %>
+    <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: "#{name}_ticket", upload: "Ticket" } %>
+  </div>
 </div>

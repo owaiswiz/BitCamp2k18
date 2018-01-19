@@ -28,6 +28,35 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
         text-align: left;
+        .optional.animated.body{
+          display: none;
+        }
+        >.header {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          h3 {
+            margin: 0;
+          }
+          .add-remove-member {
+            background-color: transparent;
+            color: $color-success;
+            border-color: $color-success;
+            border-width: 2px;
+            &.danger {
+              color: $color-danger;
+              border-color: $color-danger;
+              &:hover {
+                background-color: $color-danger;
+              }
+            }
+            &:hover {
+              background-color: $color-success;
+              color: white;
+            }
+          }
+        }
       }
     }
   }
