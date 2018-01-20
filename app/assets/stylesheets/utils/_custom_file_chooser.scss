@@ -48,6 +48,14 @@
     input[type=file] {
       display: none;
     }
+    &.error {
+      .file-select-button {
+        background-color: $color-danger-light;
+      }
+      .file-select-name {
+        color: $color-danger-light;
+      }
+    }
     &.file-select-disabled {
       opacity: 0.65;
       &:hover {

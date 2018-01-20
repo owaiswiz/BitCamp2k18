@@ -17,6 +17,7 @@
       letter-spacing: 1px;
     }
     .form-inputs {
+      text-align: left;
       .form-group {
         margin: 2rem auto;
         transition: all .2s ease-in-out;
@@ -27,7 +28,6 @@
       .team-member-block {
         padding-top: 2rem;
         padding-bottom: 2rem;
-        text-align: left;
         .optional.animated.body{
           display: none;
         }
@@ -75,4 +75,17 @@
       }
     }
   }
+}
+
+.error {
+  border-color: $color-danger-light !important;
+  border-width: 3px !important; 
+}
+
+.help-block {
+  display: block;
+  font-weight: bolder;
+  margin-top: 0.5rem;
+  color: $color-danger;
+  text-align: left;
 }
