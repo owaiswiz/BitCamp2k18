@@ -28,9 +28,21 @@
         <li class="nav-item">
           <a class="nav-link" href="/#sponsors">Sponsors</a>
         </li>
-        <li class="nav-item button-link">
-          <a class="btn btn-primary-outline" href="/register"> Register Your Team</a>
-        </li>
+        <% if !team_signed_in? %>
+          <li class="nav-item button-link">
+            <%= link_to 'Login - Team Dashboard', new_team_session_path, class: 'btn btn-primary-outline' unless controller_name == 'sessions' %>
+          </li>
+          <li class="nav-item button-link">
+            <%= link_to 'Register Your Team', new_team_registration_path, class: 'btn btn-primary-outline' unless controller_name == 'registrations' %>
+          </li>
+        <% else %>
+          <li class="nav-item button-link">
+            <%= link_to 'Dashboard', edit_team_registration_path, class: 'btn btn-primary-outline' %>
+          </li>
+          <li class="nav-item button-link">
+            <%= link_to 'Logout', destroy_team_session_path, class: 'btn btn-primary-outline', method: :delete %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
