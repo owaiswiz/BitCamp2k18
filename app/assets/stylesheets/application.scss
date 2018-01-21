@@ -2,4 +2,21 @@
 @import "bootstrap";
 @import "font-awesome";
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
-
+@import "utils/variables";
+.alert {
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  padding: 1rem;
+  font-size:1.1rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  &.alert-success {
+    background-color: $color-success-light;
+    color: $white;
+  }
+  &.alert-danger {
+    background-color: $color-danger-light;
+    color: $white;
+  }
+}
