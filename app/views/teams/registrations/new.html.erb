@@ -7,13 +7,37 @@
   <div class="container">
     <h1>REGISTER YOUR TEAM</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
+      <% resource.members.build %>
+      <%
+          if params[:team]
+            team_name    = params[:team][:name]
+            college_name = params[:team][:college_name]
+            email        = params[:team][:email]
+            leader_val   = params[:team][:members_attributes]["0"]
+            member_1_val = params[:team][:members_attributes]["1"]
+            member_2_val = params[:team][:members_attributes]["2"]
+            member_3_val = params[:team][:members_attributes]["3"]
+          end
+      %>
       <div class="form-inputs">
-        <%= f.input :team_name, required: true, placeholder: 'Team Name', autofocus: true %>
+        <%= f.input :name, required: true, placeholder: 'Team Name', autofocus: true, input_html: {value: team_name} %>
+        <%= f.input :college_name, required: true, placeholder: 'College Name', input_html: {value: college_name} %>
 
-        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'leader'} %>
-        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'member_1'} %>
-        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'member_2', optional: true } %>
-        <%= render partial: 'teams/shared/team_member_block', locals: {f:f,name: 'member_3', optional: true } %>
+        <%= f.simple_fields_for :members do |leader| %>
+          <%= render partial: 'teams/shared/team_member_block', locals: {main: f, f:leader, default_val: leader_val, name: 'leader'} %>
+        <% end %>
+
+        <%= f.simple_fields_for :members do |member_1| %>
+          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_1, default_val: member_1_val, name: 'member_1'} %>
+        <% end %>
+
+        <%= f.simple_fields_for :members do |member_2| %>
+          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_2, default_val: member_2_val, name: 'member_2', optional: true } %>
+        <% end %>
+
+        <%= f.simple_fields_for :members do |member_3| %>
+          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_3, default_val: member_3_val, name: 'member_3', optional: true } %>
+        <% end %>
       </div>
 
       <div class="form-actions">
