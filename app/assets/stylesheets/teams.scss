@@ -75,6 +75,31 @@
       }
     }
   }
+  &.login-form {
+    .form-inputs {
+      div.checkbox {
+        input + label.boolean {
+          font-size: 1.1rem;
+          span.label {
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  .links-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    a {
+      margin-bottom: 1rem;
+      display: block;
+      color: $color-primary;
+      &:hover {
+        text-decoration: none;
+        color: $color-primary-dark;
+      }
+    }
+  }
 }
 
 .error {
