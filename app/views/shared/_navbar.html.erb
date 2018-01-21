@@ -33,7 +33,7 @@
             <%= link_to 'Login - Team Dashboard', new_team_session_path, class: 'btn btn-primary-outline' unless controller_name == 'sessions' %>
           </li>
           <li class="nav-item button-link">
-            <%= link_to 'Register Your Team', new_team_registration_path, class: 'btn btn-primary-outline' unless controller_name == 'registrations' %>
+            <%= link_to 'Register Your Team', new_team_registration_path, class: 'btn btn-primary-outline', data: {turbolinks: false} unless controller_name == 'registrations' %>
           </li>
         <% else %>
           <li class="nav-item button-link">
