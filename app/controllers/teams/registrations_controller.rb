@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Teams::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -10,9 +10,22 @@ class Teams::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    params[:team][:members_attributes].each do |key,val|
+      college_id_file = val[:college_id]
+      ticket_file = val[:ticket]
+
+      if college_id_file.instance_of? ActionDispatch::Http::UploadedFile
+        encoded_college_id_file = Base64.strict_encode64 college_id_file.read
+        val[:college_id] = 'data:' + college_id_file.content_type + ';base64,' + encoded_college_id_file
+      end
+      if ticket_file.instance_of? ActionDispatch::Http::UploadedFile
+        encoded_ticket_file = Base64.strict_encode64 ticket_file.read
+        val[:ticket] = 'data:' + ticket_file.content_type + ';base64,' + encoded_ticket_file
+      end
+    end
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -38,12 +51,12 @@ class Teams::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :college_name, members_attributes: [:name, :phone, :college_id, :ticket]])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
