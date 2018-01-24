@@ -23,6 +23,5 @@
       <%= main.input :password_confirmation, placeholder: 'Password Confirmation', required: required, error: 'Password does not match' %>
     <% end %>
     <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'college_id', upload: "College ID", required: required } %>
-    <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'ticket', upload: "Ticket" } %>
   </div>
 </div>
