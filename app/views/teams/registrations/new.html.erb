@@ -7,7 +7,7 @@
   <div class="container">
     <h1>REGISTER YOUR TEAM</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
-      <% resource.members.build %>
+      <% resource.members.destroy_all and resource.members.build %>
       <%
           if params[:team]
             team_name    = params[:team][:name]
