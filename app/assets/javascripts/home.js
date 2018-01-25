@@ -213,3 +213,10 @@ function handleReadMoreModal() { // eslint-disable-line no-unused-vars
     modal.find('.modal-body blockquote p').html(text);
   });
 }
+
+function handleFaqToggle() { // eslint-disable-line no-unused-vars 
+  $('.question').off('click.homejs').on('click.homejs',function() {
+    $(this).find('.question-icon').toggleClass('clicked');
+    $(this).find('.question-answer').toggleClass('clicked').animateCss('jello');
+  });
+}

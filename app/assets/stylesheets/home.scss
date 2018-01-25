@@ -272,6 +272,45 @@ header {
   } 
 }
 
+// For the FAQs Section
+.faqs {
+  .container {
+    .question {
+      text-align: left;
+      font-size: 1.1rem;
+      &:hover {
+        cursor: pointer;
+      }
+      .question-content-container {
+        display: flex;
+        align-items: center;
+        user-select: none;
+        .question-icon {
+          color: $color-primary;
+          font-size: 1.8rem;
+          margin-right: 1rem;
+          transition-duration: 0.2s;
+          &.clicked {
+            transform: rotate(45deg);
+          }
+        }
+        .question-content {
+          font-size: 1.3rem;
+        }
+      }
+      .question-answer {
+        display: none;
+        margin: 0.6rem;
+        padding: 1rem;
+        padding-left: 2rem;
+        border-left: 0.3rem solid $color-primary;
+        &.clicked {
+          display: block;
+        }
+      }
+    }
+  }
+}
 // For Testimonials Section
 .testimonials {
   .testimonial-item {
