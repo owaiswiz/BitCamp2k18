@@ -216,7 +216,14 @@ function handleReadMoreModal() { // eslint-disable-line no-unused-vars
 
 function handleFaqToggle() { // eslint-disable-line no-unused-vars 
   $('.question').off('click.homejs').on('click.homejs',function() {
-    $(this).find('.question-icon').toggleClass('clicked');
-    $(this).find('.question-answer').toggleClass('clicked').animateCss('jello');
+    var isCurrentlyClicked = $(this).find('.question-icon').hasClass('clicked');
+    var $questionContainer = $(this).closest('.container');
+    $questionContainer.find('.question-icon').removeClass('clicked');
+    $questionContainer.find('.question-answer').removeClass('clicked');
+
+    if(!isCurrentlyClicked) {
+      $(this).find('.question-icon').addClass('clicked');
+      $(this).find('.question-answer').addClass('clicked').animateCss('jello');
+    }
   });
 }

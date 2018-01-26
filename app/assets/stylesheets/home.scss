@@ -278,12 +278,13 @@ header {
     .question {
       text-align: left;
       font-size: 1.1rem;
+      margin: 1rem auto;
       &:hover {
         cursor: pointer;
       }
       .question-content-container {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         user-select: none;
         .question-icon {
           color: $color-primary;
