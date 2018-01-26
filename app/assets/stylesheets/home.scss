@@ -1,6 +1,6 @@
 @import "utils/variables";
 body {
-  font-family: 'Source Sans Pro', sans-serif !important;
+  font-family: 'Josefin Sans','Source Sans Pro', sans-serif !important;
 }
 
 h1,
@@ -9,8 +9,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 700; 
+  font-family: 'Josefin Sans', 'Source Sans Pro', sans-serif !important;
+  font-weight: bolder !important; 
 }
 
 header.masthead {
@@ -319,6 +319,9 @@ header {
     flex-direction: column;
     align-items: center;
     min-height: 100%;
+    h3 {
+      font-size: 1.5rem;
+    }
     .read-more-button {
       @media (max-width: 991px) {
         margin-bottom: 5rem;

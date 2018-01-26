@@ -1,7 +1,7 @@
 //= require_tree .
 @import "bootstrap";
 @import "font-awesome";
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Source+Sans+Pro:300');
 @import "utils/variables";
 .alert {
   margin-bottom: 0;
@@ -19,4 +19,8 @@
     background-color: $color-danger-light;
     color: $white;
   }
+}
+
+nav {
+  font-family: 'Source Sans Pro', sans-serif;
 }
