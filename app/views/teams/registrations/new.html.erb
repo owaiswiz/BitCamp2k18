@@ -28,7 +28,7 @@
         <% end %>
 
         <%= f.simple_fields_for :members do |member_1| %>
-          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_1, default_val: member_1_val, name: 'member_1', optional: true } %>
+          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_1, default_val: member_1_val, name: 'member_1' } %>
         <% end %>
 
         <%= f.simple_fields_for :members do |member_2| %>
