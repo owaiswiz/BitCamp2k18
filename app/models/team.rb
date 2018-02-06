@@ -8,4 +8,10 @@ class Team < ApplicationRecord
   accepts_nested_attributes_for :members
 
   validates :name, :college_name, presence: true
+
+  after_create do
+    # I didn't want this
+    team_id = "BT18" + ( "%04d" % self.id)
+    self.update_column(:team_id, team_id)
+  end
 end
