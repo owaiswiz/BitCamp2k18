@@ -1,4 +1,6 @@
-<% color_primary = "#2196F3" %>
+<% color_primary = "#42A5F5" %>
+<% color_track_fill = "#19b76a" %>
+<% color_track_stroke = "#4beb9e" %>
 <svg xmlns="http://www.w3.org/2000/svg" class="hackathon" viewBox="0 0 842 539" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="1.5">
   <g class="Grass">
     <path fill="<%= color_primary %>" d="M0 0h842v107.7H0z"/>
@@ -8,7 +10,7 @@
     <path fill="<%= color_primary %>" d="M0 431h842v107.6H0z"/>
   </g>
   <g class="Track">
-    <path class="Track.-Path" fill="#ff792c" stroke="#fff" stroke-width="7" d="M-9 215.4h864.6V323H-9z"/>
+  <path class="Track.-Path" fill="<%= color_track_fill %>" stroke="<%= color_track_stroke %>" stroke-width="7" d="M-9 215.4h864.6V323H-9z"/>
   </g>
   <g class="Console">
     <g class="Screen">
