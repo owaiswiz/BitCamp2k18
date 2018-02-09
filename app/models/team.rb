@@ -9,6 +9,15 @@ class Team < ApplicationRecord
 
   validates :name, :college_name, presence: true
 
+  before_create do
+    self.members.each do |member|
+      if member.name.blank?
+        self.members.delete member
+      end
+    end
+    
+  end
+
   after_create do
     # I didn't want this
     team_id = "BT18" + ( "%04d" % self.id)
