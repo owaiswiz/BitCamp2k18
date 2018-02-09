@@ -1,0 +1,15 @@
+// Place all the styles related to the Teams/Dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.team-dashboard {
+  padding-top: 4rem;
+  .members {
+    padding-top: 4rem;
+    .member {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}

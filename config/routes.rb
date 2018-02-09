@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :teams do
+    get 'dashboard/index'
+  end
+
   devise_for :teams, controllers: {
     sessions: 'teams/sessions',
     registrations: 'teams/registrations'
