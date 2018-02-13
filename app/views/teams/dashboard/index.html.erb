@@ -1,8 +1,28 @@
 <div class="team-dashboard container">
   <h1>Dashboard</h1>
-  <div class="members"> 
-    <% current_team.members.each do |member| %>
-      <div class="member display-4"><%= member.name %></div>
-    <% end %>
+  <div class="d-flex justify-content-between">
+    <h2>Team ID - <%= current_team.team_id %></h2>
+    <h2>Team Name - <%= current_team.name %></h2>
+    <h2>College - <%= current_team.college_name.split.map {|name| name[0].chr}.join('.').upcase %></h2>
+  </div>
+  <div class="d-flex">
+    <div class="members"> 
+      <h2>Members</h2>
+      <div class="members-container mr-4">
+        <% current_team.members.each do |member| %>
+          <div class="member-container">
+            <div class="member display-4">
+              <%= member.name %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="submit-abstract pl-4">
+      <h2>Submit Abstract</h2>
+      <div class="submit-abstract-container">
+        <textarea name="abstract" id="absctract" placeholder="Enter your Abstract"></textarea>
+      </div>
+    </div>
   </div>
 </div>

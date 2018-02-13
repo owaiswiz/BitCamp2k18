@@ -1,15 +1,56 @@
+@import 'utils/variables';
 // Place all the styles related to the Teams/Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .team-dashboard {
   padding-top: 4rem;
-  .members {
+
+  .d-flex {
     padding-top: 4rem;
+
+    .members-container {
+      margin-top: 2rem;
+    }
+
+    .member-container:not(:last-child) {
+      border-bottom: 1px solid $color-primary-light;
+    }
+
     .member {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      font-size: 1.5rem;
+      border-left: 2px solid $color-primary;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+      padding: 1rem 0 1rem 1.5rem;
+      &:hover {
+        border-color: $color-success;
+        cursor: pointer;
+      }
+    }
+
+    .submit-abstract {
+      width: auto;
+      flex: 1;
+
+      .submit-abstract-container {
+        margin-top: 2rem;
+      }
+
+      textarea {
+        min-height: 300px;
+        border: 2px solid $color-secondary;
+        margin: 20px auto;
+        padding: 15px;
+        display: block;
+        width: 100%;
+        border-radius: 3px;
+        font-size: 18px;
+        transition: opacity .4s;
+        text-align: left;
+        height: auto;
+        transition: all .5s ease;
+      }
     }
   }
 }
