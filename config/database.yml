@@ -83,3 +83,5 @@ production:
   database: BitCamp2k18_production
   username: BitCamp2k18
   password: <%= ENV['BITCAMP2K18_DATABASE_PASSWORD'] %>
+  host: <%= ENV['HOSTNAME'] %>
+  port: <%= ENV['PORT'] %>
