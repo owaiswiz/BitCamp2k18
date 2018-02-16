@@ -10,4 +10,8 @@ class HomeController < ApplicationController
   def contact
 
   end
+
+  def schedule
+
+  end
 end

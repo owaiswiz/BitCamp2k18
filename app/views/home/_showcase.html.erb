@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row no-gutters">
       <div class="col-lg-6 my-auto showcase-text">
-        <h2>EVENTS</h2>
+        <h2>SCHEDULE</h2>
         <p class="lead mb-0">
           <span>
             Special. Unforgettable. Spectacular. Fun is and should be the priority one.
           </span>
-          <a class="btn btn-primary-outline" href="/events">View All Events</a>
+          <%= link_to 'View Schedule', schedule_path, class: 'btn btn-primary-outline' %>
         </p>
       </div>
       <div class="col-lg-6 text-white showcase-img" style="background-image: url('<%= image_path('events.jpg') %>');"></div>
@@ -20,7 +20,7 @@
           <span>
             Participating in BitCamp is really simple. Just Complete Registration of your team by clicking the button below.
           </span>
-          <a class="btn btn-primary-outline" href="/register_team">Register Your Team</a>
+          <%= link_to 'Register Your Team', new_team_registration_path, class: 'btn btn-primary-outline' %>
         </p>
       </div>
     </div>
