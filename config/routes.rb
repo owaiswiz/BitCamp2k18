@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :teams do
     get 'dashboard/index'
+    post 'dashboard/add_member'
   end
 
   devise_for :teams, controllers: {

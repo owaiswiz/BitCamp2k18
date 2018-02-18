@@ -23,7 +23,7 @@
           <%= main.input :password_confirmation, placeholder: 'Password Confirmation', required: required, error: 'Password does not match' %>
       <% end %>
       <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'college_id', upload: "College ID", required: required } %>
-      <%= f.input :github, placeholder: 'Github Profile Link', required: required,input_html: {value: default_val[:hackerearth]} %>
+      <%= f.input :github, placeholder: 'Github Profile Link', required: required,input_html: {value: default_val[:github]} %>
       <%= f.input :linkedin, placeholder: 'LinkedIn Profile Link', required: required,input_html: {value: default_val[:linkedin]} %>
       <%= f.input :hackerearth, placeholder: 'Hackerearth Profile Link' + (name != 'leader' ? ' (Optional)' : ''), required: name == 'leader',input_html: {value: default_val[:hackerearth]} %>
     <%= f.input :projects, placeholder: 'Describe Your Past Projects (Optional)', required: false,input_html: {value: default_val[:projects]} %>

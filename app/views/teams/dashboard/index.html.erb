@@ -9,20 +9,31 @@
     <div class="members"> 
       <h2>Members</h2>
       <div class="members-container mr-4">
+        <% valid_member = 0 %>
         <% current_team.members.each do |member| %>
-          <div class="member-container">
-            <div class="member display-4">
-              <%= member.name %>
+          <% if !member.name.blank? %>
+            <% valid_member += 1 %>
+            <div class="member-container">
+              <div class="member display-4">
+                <%= member.name %>
+              </div>
             </div>
-          </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="add-member-container">
+        <% if valid_member < 4 %>
+            <a class="btn btn-primary-outline add-member-btn" href="#" data-toggle="modal" data-target="#add-team-member-modal">Add Member</a>
+        <% else %>
+            <a class="btn btn-primary-outline add-member-btn disabled" href="#">Your Team is Full</a>
         <% end %>
       </div>
     </div>
     <div class="submit-abstract pl-4">
-      <h2>Submit Abstract</h2>
+      <h2>Placeholder</h2>
       <div class="submit-abstract-container">
-        <textarea name="abstract" id="absctract" placeholder="Enter your Abstract"></textarea>
       </div>
     </div>
   </div>
 </div>
+<%= render 'shared/add_team_member' %>
