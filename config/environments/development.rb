@@ -26,6 +26,16 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'mail.csirait.com',
+    port:                 587,
+    domain:               'csirait.com',
+    user_name:            ENV['BITCAMP_SMTP_USERNAME'],
+    password:             ENV['BITCAMP_SMTP_PASSWORD'],
+    authentication:       'plain',
+    ssl: false,
+    enable_starttls_auto: false  }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 

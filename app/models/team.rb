@@ -13,5 +13,7 @@ class Team < ApplicationRecord
     # I didn't want this
     team_id = "BT18" + ( "%04d" % self.id)
     self.update_column(:team_id, team_id)
+
+    WelcomeMailer.welcome_email(self).deliver_later
   end
 end
