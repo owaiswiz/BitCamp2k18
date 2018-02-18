@@ -12,17 +12,7 @@ class Teams::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     params[:team][:members_attributes].each do |key,val|
-      college_id_file = val[:college_id]
-      ticket_file = val[:ticket]
-
-      if college_id_file.instance_of? ActionDispatch::Http::UploadedFile
-        encoded_college_id_file = Base64.strict_encode64 college_id_file.read
-        val[:college_id] = 'data:' + college_id_file.content_type + ';base64,' + encoded_college_id_file
-      end
-      if ticket_file.instance_of? ActionDispatch::Http::UploadedFile
-        encoded_ticket_file = Base64.strict_encode64 ticket_file.read
-        val[:ticket] = 'data:' + ticket_file.content_type + ';base64,' + encoded_ticket_file
-      end
+      val[:college_id], val[:ticket] = helpers.get_encoded_files(val[:college_id], val[:ticket])
     end
     super
   end
