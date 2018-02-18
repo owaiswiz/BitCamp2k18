@@ -178,80 +178,33 @@
         <h1>SCHEDULE &darr;</h1>
     </div>
 </section>
-
+<%
+schedule = {
+  'March 31st - 9:00AM': 'Team Verification',
+  'March 31st - 10:00AM': 'Icebreaker Session',
+  'March 31st - 11:00AM': 'Intense Programming',
+  'March 31st - 3:00PM': 'Lunch Break',
+  'March 31st - 3:30PM': 'Intense Programming',
+  'March 31st - 6:30PM': 'Tea/Coffee Break',
+  'March 31st - 7:00PM': 'Intense Programming',
+  'March 31st - 10:00PM': 'Dinner',
+  'March 31st - 19:45PM': 'Intense Programming',
+  'April 1st - 7:00AM': 'Breakfast',
+  'April 1st - 7:30AM': 'Intense Programming',
+  'April 1st - 10:30AM': 'Idea Pitch',
+  'April 1st - 12:30PM': 'Presentation',
+  'April 1st - 3:00PM': 'Prize Distribution',
+}
+%>
 <section class="timeline">
     <ul>
-        <li>
-            <div>
-                <time>March 15th - 9AM</time> Team Verification
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 10AM</time> Icebreaker Session
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 11AM</time> Intense Programming
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 3PM</time> Lunch Break
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 3:30PM</time> Intense Programming
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 6:30PM</time> Tea/Coffe Break
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 7:00PM</time> Intense Programming
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 10:00PM</time> Dinner
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 15th - 10:45PM</time> Intense Programming
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 16th 7:00AM</time> Breakfast
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 16th 7:30AM</time> Intense Programming
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 16th 10:30AM</time> Idea Pitch
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 16th 12:30PM</time> Presentation
-            </div>
-        </li>
-        <li>
-            <div>
-                <time>March 16th 3:00PM</time> Prize Distribution
-            </div>
-        </li>
-        
+        <% schedule.each do |time,sess| %>
+            <li>
+                <div>
+                    <time><%= time %></time> <%= sess %>
+                </div>
+            </li>
+        <% end %>
     </ul>
 </section>
 <script type="text/javascript">
