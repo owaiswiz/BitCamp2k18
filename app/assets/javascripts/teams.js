@@ -18,6 +18,8 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
 
   function validatePassword() {
     var passwordInputs = $('.form-group input.password');
+    if(passwordInputs.length == 0)
+      return;
     var $passwordInput = $(passwordInputs[0]);
     var $passwordConfirmationInput = $(passwordInputs[1]);
     if($passwordInput.val().length < 6) {
@@ -52,7 +54,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
     $element.closest('div.file-upload').find('.help-block').remove();
   }
   var clicked = false;
-  $('.file-upload').on('click',function() {
+  $('.file-upload').off('click').on('click',function() {
     if(!clicked) {
       clicked = true; 
       $(this).find('input').click();
@@ -76,7 +78,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
     removeFileErrorBlock($fileSelect);
   });
 
-  $('.add-remove-member').on('click', function() {
+  $('.add-remove-member').off('click').on('click', function() {
     $(this).toggleClass('danger');
     $(this).find('i').toggleClass('fa-plus  fa-minus');
     var $memberBlockBody = $(this).closest('.team-member-block').find('.animated.body');
@@ -95,7 +97,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
     });
   });
 
-  $('.register-new-btn').on('click', function() {
+  $('.register-new-btn,.add-team-member-btn').off('click').on('click', function() {
     var requiredInputs = $('.form-group.required input');
     requiredInputs.each(function() {
       var $this = $(this);
@@ -141,7 +143,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
     }
   });
 
-  $('input').on('focus', function() {
+  $('input').off('focus').on('focus', function() {
     var $this = $(this);
     removeErrorBlock($this);
   });

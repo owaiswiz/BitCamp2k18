@@ -29,6 +29,16 @@
       }
     }
 
+    .add-member-container {
+      .add-member-btn {
+        padding: 1rem 4rem;
+
+        &:hover,&:focus {
+          letter-spacing: initial;
+        }
+      }
+    }
+
     .submit-abstract {
       width: auto;
       flex: 1;
@@ -51,6 +61,27 @@
         height: auto;
         transition: all .5s ease;
       }
+    }
+  }
+
+}
+
+#add-team-member-modal {
+  .modal-dialog {
+    min-width: 35%;
+  }
+
+  .modal-body {
+    background: transparent;
+  }
+  .modal-footer .btn {
+    padding: 0.8rem 2rem;
+  }
+  .add-team-member-btn {
+
+    &:hover,&:focus {
+      color: white;
+      letter-spacing: initial;
     }
   }
 }
