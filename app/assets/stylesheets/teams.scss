@@ -12,10 +12,13 @@
       font-weight: bolder;
       padding-bottom: 3rem;
     }
-    input {
+    input, textarea {
       padding: 1rem;
       font-size: 1.2rem;
       letter-spacing: 1px;
+    }
+    textarea {
+      min-height: 8rem;
     }
     .form-inputs {
       text-align: left;

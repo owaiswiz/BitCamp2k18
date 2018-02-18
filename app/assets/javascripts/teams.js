@@ -30,7 +30,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
 
   function addError($element, error) {
     hasErrors = true;
-    removeErrorBlock($element)
+    removeErrorBlock($element);
     $element.addClass('error');
     var errorBlockHTML = '<span class="help-block">' + error + '</span>';
     $element.after(errorBlockHTML);
@@ -86,8 +86,10 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
     formGroups.each(function () {
       var $this = $(this);
       var ticketFormGroupRegex = /_ticket/;
+      var hackearthFormGroupRegex = /_hackerearth/;
       var isTicketFormGroup = $this.hasClass('file') && ticketFormGroupRegex.test($this.attr('class'));
-      if(!isTicketFormGroup) {
+      var isHackerearthFormGroup = hackearthFormGroupRegex.test($this.attr('class'));
+      if(!isTicketFormGroup && !isHackerearthFormGroup) {
         $this.toggleClass('optional required');
       }
     });
