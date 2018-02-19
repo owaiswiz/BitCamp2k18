@@ -15,6 +15,9 @@ class Teams::RegistrationsController < Devise::RegistrationsController
       val[:college_id], val[:ticket] = helpers.get_encoded_files(val[:college_id], val[:ticket])
     end
     super
+    if resource.persisted?
+      WelcomeMailer.welcome_email(resource).deliver_later
+    end
   end
 
   # GET /resource/edit
