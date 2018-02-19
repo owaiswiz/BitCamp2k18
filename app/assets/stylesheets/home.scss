@@ -43,6 +43,11 @@ font-size: 3rem; } }
   padding: 4rem 0rem 4rem 4rem !important;
 }
 
+@media (max-width: 768px) {
+    .showcase .showcase-text {
+        padding-left: 1rem !important;
+    }
+}
 .showcase .showcase-img {
   min-height: 25rem;
 background-size: cover; }
