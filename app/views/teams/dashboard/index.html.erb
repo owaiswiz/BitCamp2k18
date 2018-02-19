@@ -1,12 +1,12 @@
 <div class="team-dashboard container">
   <h1>Dashboard</h1>
-  <div class="d-flex justify-content-between">
-    <h2>Team ID - <%= current_team.team_id %></h2>
-    <h2>Team Name - <%= current_team.name %></h2>
-    <h2>College - <%= current_team.college_name.split.map {|name| name[0].chr}.join('.').upcase %></h2>
+  <div class="d-flex row justify-content-between heading-container">
+    <h2 class="col-xl-4 col-lg-6">Team ID - <%= current_team.team_id %></h2>
+    <h2 class="col-xl-4 col-lg-6">Team Name - <%= current_team.name %></h2>
+    <h2 class="col-xl-4 col-lg-12 ">College - <%= current_team.college_name.split.map {|name| name[0].chr}.join('.').upcase %></h2>
   </div>
-  <div class="d-flex">
-    <div class="members"> 
+  <div class="d-flex row">
+    <div class="members col-sm-12 col-md-4"> 
       <h2>Members</h2>
       <div class="members-container mr-4">
         <% valid_member = 0 %>
@@ -23,14 +23,16 @@
       </div>
       <div class="add-member-container">
         <% if valid_member < 4 %>
-            <a class="btn btn-primary-outline add-member-btn" href="#" data-toggle="modal" data-target="#add-team-member-modal">Add Member</a>
+          <a class="btn btn-primary-outline add-member-btn" href="#" data-toggle="modal" data-target="#add-team-member-modal">Add Member</a>
         <% else %>
-            <a class="btn btn-primary-outline add-member-btn disabled" href="#">Your Team is Full</a>
+          <a class="btn btn-primary-outline add-member-btn disabled" href="#">Your Team is Full</a>
         <% end %>
       </div>
     </div>
-    <div class="submit-abstract pl-4">
-      <div class="submit-abstract-container">
+    <div class="announcements ml-4 col-sm-12 col-md-8">
+      <h2>Announcements</h2>
+      <div class="announcements-container">
+        Keep checking this section for latest announcements.
       </div>
     </div>
   </div>
