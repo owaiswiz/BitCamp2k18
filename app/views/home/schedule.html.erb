@@ -180,19 +180,19 @@
 </section>
 <%
 schedule = {
-  'March 31st - 9:00AM': 'Team Verification',
-  'March 31st - 10:00AM': 'Icebreaker Session',
-  'March 31st - 11:00AM': 'Intense Programming',
-  'March 31st - 3:00PM': 'Lunch Break',
-  'March 31st - 3:30PM': 'Intense Programming',
-  'March 31st - 6:30PM': 'Tea/Coffee Break',
-  'March 31st - 7:00PM': 'Intense Programming',
-  'March 31st - 10:00PM': 'Dinner',
-  'April 1st - 7:00AM': 'Breakfast',
-  'April 1st - 7:30AM': 'Intense Programming',
-  'April 1st - 10:30AM': 'Idea Pitch',
-  'April 1st - 12:30PM': 'Presentation',
-  'April 1st - 3:00PM': 'Prize Distribution',
+  'March 24th - 9:00AM': 'Team Verification',
+  'March 24th - 10:00AM': 'Icebreaker Session',
+  'March 24th - 11:00AM': 'Intense Programming',
+  'March 24th - 3:00PM': 'Lunch Break',
+  'March 24th - 3:30PM': 'Intense Programming',
+  'March 24th - 6:30PM': 'Tea/Coffee Break',
+  'March 24th - 7:00PM': 'Intense Programming',
+  'March 24th - 10:00PM': 'Dinner',
+  'March 25th - 7:00AM': 'Breakfast',
+  'March 25th - 7:30AM': 'Intense Programming',
+  'March 25th - 10:30AM': 'Idea Pitch',
+  'March 25th - 12:30PM': 'Presentation',
+  'March 25th - 3:00PM': 'Prize Distribution',
 }
 %>
 <section class="timeline">
@@ -211,11 +211,8 @@ schedule = {
 
      'use strict';
 
-     // define variables
      var items = document.querySelectorAll(".timeline li");
 
-     // check if an element is in viewport
-     // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
      function isElementInViewport(el) {
          var rect = el.getBoundingClientRect();
          return (
@@ -234,7 +231,6 @@ schedule = {
          }
      }
 
-     // listen for events
      window.addEventListener("turbolinks:load", callbackFunc);
      window.addEventListener("resize", callbackFunc);
      window.addEventListener("scroll", callbackFunc);
