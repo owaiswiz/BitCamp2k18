@@ -176,7 +176,7 @@ function handleSvgAnimation(){ // eslint-disable-line no-unused-vars
 
 function countdown() {
   var now = new Date();
-  var eventDate = new Date(2018, 2, 31,11,59,59,59);
+  var eventDate = new Date(2018, 2, 24,9,0,0,0);
   var currentTime = now.getTime();
   var evenTime = eventDate.getTime();
 
