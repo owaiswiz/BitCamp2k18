@@ -3,7 +3,7 @@
   <div class="d-flex row justify-content-between heading-container">
     <h2 class="col-xl-4 col-lg-6">Team ID - <%= current_team.team_id %></h2>
     <h2 class="col-xl-4 col-lg-6">Team Name - <%= current_team.name %></h2>
-    <h2 class="col-xl-4 col-lg-12 ">College - <%= current_team.college_name.split.map {|name| name[0].chr}.join('.').upcase %></h2>
+    <h2 class="col-xl-4 col-lg-12 ">College - <%= current_team.college_name.length > 8 ? current_team.college_name.split.map {|name| name[0].chr}.join('.').upcase : current_team.college_name %></h2>
   </div>
   <div class="d-flex row">
     <div class="members col-sm-12 col-md-4"> 
