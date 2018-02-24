@@ -24,3 +24,5 @@ public/assets/
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+
+todays_stats\.csv

@@ -6,6 +6,6 @@ class StatsMailer < ApplicationMailer
     @teams_registered_today_count = teams_registered_today_count
     @members_count = members_count
     attachments[file_name] = File.read(file_name)
-    mail to: "owaiswiz@gmail.com", subject: 'Todays Stats - BitCamp'
+    mail to: "owaiswiz@gmail.com,neelbhave91@gmail.com,abhishek22.2323@gmail.com", subject: 'Todays Stats - BitCamp'
   end
 end
