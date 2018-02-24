@@ -14,4 +14,8 @@ class Team < ApplicationRecord
     team_id = "BT18" + ( "%04d" % self.id)
     self.update_column(:team_id, team_id)
   end
+
+  def leader
+    self.members.where(leader: true)[0]
+  end
 end

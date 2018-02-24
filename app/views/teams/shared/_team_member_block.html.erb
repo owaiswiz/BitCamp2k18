@@ -21,6 +21,7 @@
           <%= main.input :email, placeholder: 'Contact Email', required: required, error: 'This e-mail has already been used to register a team' %>
           <%= main.input :password, placeholder: 'Password', required: required, error: 'Password should be atleast 6 characters' %>
           <%= main.input :password_confirmation, placeholder: 'Password Confirmation', required: required, error: 'Password does not match' %>
+          <%= f.input :leader, as: :hidden, input_html: {value: true} %>
       <% end %>
       <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'college_id', upload: "College ID", required: required } %>
       <%= f.input :github, placeholder: 'Github Profile Link', required: required,input_html: {value: default_val[:github]} %>

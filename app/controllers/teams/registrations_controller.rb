@@ -48,7 +48,7 @@ class Teams::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :college_name, members_attributes: [:name, :phone, :college_id, :ticket, :github, :hackerearth, :linkedin, :projects]])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :college_name, members_attributes: [:name, :phone, :college_id, :ticket, :github, :hackerearth, :linkedin, :projects, :leader]])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
