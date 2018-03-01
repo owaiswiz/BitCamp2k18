@@ -12,13 +12,18 @@
       font-weight: bolder;
       padding-bottom: 3rem;
     }
-    input, textarea {
+    input, textarea, select {
       padding: 1rem;
       font-size: 1.2rem;
       letter-spacing: 1px;
     }
     textarea {
       min-height: 8rem;
+    }
+    select {
+      // height: calc(4rem + 2px) !important;
+      text-indent: 10px;
+      color: #868e96;
     }
     .form-inputs {
       text-align: left;

@@ -24,6 +24,7 @@
           <%= f.input :leader, as: :hidden, input_html: {value: true} %>
       <% end %>
       <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'college_id', upload: "College ID", required: required } %>
+      <%= f.input :tshirt_size, prompt: 'Select T-Shirt Size', collection: ['Small', 'Medium', 'Large'], required: required %>
       <%= f.input :github, placeholder: 'Github Profile Link', required: required,input_html: {value: default_val[:github]} %>
       <%= f.input :linkedin, placeholder: 'LinkedIn Profile Link', required: required,input_html: {value: default_val[:linkedin]} %>
       <%= f.input :hackerearth, placeholder: 'Hackerearth Profile Link' + (name != 'leader' ? ' (Optional)' : ''), required: name == 'leader',input_html: {value: default_val[:hackerearth]} %>

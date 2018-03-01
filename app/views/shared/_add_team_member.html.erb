@@ -15,11 +15,13 @@
           </button>
         </div>
         <div class="modal-body form-container">
-          <div class="container">
+          <div class="form-inputs container">
             <% required = true  %>
             <%= f.input :name, placeholder: 'Name', required: required %>
             <%= f.input :phone, placeholder: 'Mobile No', required: required %>
             <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'college_id', upload: "College ID", required: required } %>
+            <%= f.input :tshirt_size, prompt: 'Select T-Shirt Size', collection: ['Small', 'Medium', 'Large'], required: required %>
+
             <%= f.input :github, placeholder: 'Github Profile Link', required: required %>
             <%= f.input :linkedin, placeholder: 'LinkedIn Profile Link', required: required %>
             <%= f.input :hackerearth, placeholder: 'Hackerearth Profile Link (Optional)', required: false %>

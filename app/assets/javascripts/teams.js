@@ -98,7 +98,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
   });
 
   $('.register-new-btn,.add-team-member-btn').off('click').on('click', function() {
-    var requiredInputs = $('.form-group.required input');
+    var requiredInputs = $('.form-group.required input, .form-group.required select');
     requiredInputs.each(function() {
       var $this = $(this);
       if($this.hasClass('string')) {
@@ -124,27 +124,35 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
           addFileErrorBlock($fileSelect, EMPTY_FILE);
         }
       }
+      if($this.hasClass('select')) {
+        if($this.val() == "" || $this.val() == null) {
+          addError($this, EMPTY_INPUT);
+        }
+      }
     });
 
     validatePassword();
 
     if(hasErrors) {
       hasErrors = false;
-      var $firstErrorInput = $('input.error').first();
+      var $firstErrorInput = $('.form-container .error').first();
       if($firstErrorInput.hasClass('file')) {
         $firstErrorInput = $firstErrorInput.closest('.file-select');
       }
       $('html, body').animate({
         scrollTop: ($firstErrorInput.offset().top - 150)
       }, function() {
-        $('input.error, .file-select.error').animateCss('jello');
+        $('.form-container .error').animateCss('jello');
       });
       return false;
     }
   });
 
-  $('input').off('focus').on('focus', function() {
+  $('.form-inputs input, .form-inputs select, .form-inputs textarea').off('focus click').on('focus click', function() {
     var $this = $(this);
     removeErrorBlock($this);
   });
+
+  $('select option:first-child').prop('disabled',true);
+  $('select').css('height', $('.form-group.string:first-child').height() || 62 + 'px');
 }
