@@ -1,12 +1,44 @@
 RailsAdmin.config do |config|
 
+  config.main_app_name = ["BitCamp 2018", "Admin"]
+  config.excluded_models << "Admin"
+
+  config.model 'Member' do
+    list do
+      field :id
+      field :name
+      field :phone
+      field :tshirt_size
+    end
+    configure :college_id do
+      pretty_value do # used in list view columns and show views, defaults to formatted_value for non-association fields
+        "<img src='#{value}' width=300 />".html_safe
+      end
+    end
+    configure :ticket do
+      pretty_value do # used in list view columns and show views, defaults to formatted_value for non-association fields
+        "<img src='#{value}' width=300 />".html_safe
+      end
+    end
+  end
+
+  config.model 'Team' do
+    list do
+      field :team_id
+      field :name
+      field :email
+      field :college_name
+      field :members
+    end
+  end
+
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+  config.authenticate_with do
+    warden.authenticate! scope: :admin
+  end
+  config.current_user_method(&:current_admin)
 
   ## == Cancan ==
   # config.authorize_with :cancan
