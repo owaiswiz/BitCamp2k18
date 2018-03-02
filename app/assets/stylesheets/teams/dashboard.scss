@@ -33,6 +33,8 @@
     }
 
     .member {
+      display: flex;
+      align-items: center;
       border-left: 2px solid $color-primary;
       font-size: 1.4rem;
       margin-bottom: 1rem;

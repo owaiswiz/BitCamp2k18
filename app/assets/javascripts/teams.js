@@ -97,7 +97,7 @@ function handleRegistrationForm() { // eslint-disable-line no-unused-vars
     });
   });
 
-  $('.register-new-btn,.add-team-member-btn').off('click').on('click', function() {
+  $('.register-new-btn,.add-team-member-btn,.apply-travel-reimbursement-btn').off('click').on('click', function() {
     var requiredInputs = $('.form-group.required input, .form-group.required select');
     requiredInputs.each(function() {
       var $this = $(this);

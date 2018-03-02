@@ -1,0 +1,36 @@
+<script>
+  document.addEventListener("turbolinks:load", function() {
+    handleRegistrationForm();
+    handleApplyTravelReimbursementButton();
+  })
+</script>
+
+<div class="team-dashboard container">
+  <h1>Travel Reimbursement</h1>
+  <div class="d-flex row justify-content-between heading-container">
+    <h2 class="col-xl-4 col-lg-6">Team ID - <%= current_team.team_id %></h2>
+    <h2 class="col-xl-4 col-lg-6">Team Name - <%= current_team.name %></h2>
+    <h2 class="col-xl-4 col-lg-12 ">College - <%= current_team.college_name.length > 8 ? current_team.college_name.split.map {|name| name[0].chr}.join('.').upcase : current_team.college_name %></h2>
+  </div>
+  <%= simple_form_for current_team.leader, url: teams_dashboard_travel_reimbursement_path, defaults: {label: false} do |f| %>
+    <div class="d-flex row">
+      <div class="members form-container pt-4 text-left bg-white col-sm-12 col-md-12"> 
+        <h2 class="pb-5">Current Status - <%= current_team.leader.ticket.blank? ? "Not Applied" : "Applied" %></h2>
+        <h2>Upload Ticket</h2>
+        <ul class='h5 ml-2 mt-4 mb-5'>
+          <li class="py-1">Travel Reimbursement capped at a specific amount will only be provided for students coming from outside of Maharashtra.</li>
+          <li class="py-1">You can upload a multipage PDF if you have multiple photos or different ticket for each member.</li>
+          <li class="py-1">If you have any queries, feel free to contact us.</li>
+        </ul>
+        <%= render partial: 'teams/shared/upload_file', locals: {f:f, name: 'ticket', upload: "Ticket File", required: true } %>
+
+        <div class="add-member-container">
+          <div class="form-actions">
+            <%= f.button :submit, "Apply For Travel Reimbursement", class: 'apply-travel-reimbursement-btn d-none' %>
+            <a href="#" class='apply-travel-reimbursement-link btn btn-primary-outline add-member-btn'>Apply For Travel Reimbursement</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
