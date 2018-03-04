@@ -16,6 +16,6 @@ class Team < ApplicationRecord
   end
 
   def leader
-    self.members.where(leader: true)[0]
+    self.members.where(leader: true)[0] || self.members.first
   end
 end
