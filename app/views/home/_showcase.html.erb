@@ -20,7 +20,7 @@
           <span>
             Participating in BitCamp is really simple. Just Complete Registration of your team by clicking the button below.
           </span>
-          <%= link_to 'Register Your Team', new_team_registration_path, class: 'btn btn-primary-outline' %>
+          <%= link_to 'Register Your Team', new_team_registration_path, class: "btn btn-primary-outline #{'registration-closed-btn' if registration_closed?}" %>
         </p>
       </div>
     </div>

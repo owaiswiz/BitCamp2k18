@@ -12,4 +12,8 @@ module ApplicationHelper
     end
     return [new_college_id_file,new_ticket_file]
   end
+
+  def registration_closed?
+    Time.now > REGISTRATION_DATE_END
+  end
 end
