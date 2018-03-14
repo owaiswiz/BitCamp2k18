@@ -191,6 +191,7 @@ function countdown() {
   min %= 60;
   sec %= 60;
 
+  day = (day < 10) ? "0" + day : day;
   hour = (hour < 10) ? "0" + hour : hour;
   min = (min < 10) ? "0" + min : min;
   sec = (sec < 10) ? "0" + sec : sec;
