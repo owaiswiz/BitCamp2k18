@@ -7,3 +7,10 @@ function handleAddNewMemberButton() {
     e.preventDefault();
   });
 }
+
+function handleApplyTravelReimbursementButton() {
+  $('.apply-travel-reimbursement-link').off('click').on('click', function(e) {
+    $('.apply-travel-reimbursement-btn').click();
+    e.preventDefault();
+  });
+}

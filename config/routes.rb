@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   namespace :teams do
     get 'dashboard/index'
     post 'dashboard/add_member'
+    get 'dashboard/travel_reimbursement'
+    patch 'dashboard/travel_reimbursement' => 'dashboard#apply_travel_reimbursement'
   end
 
   devise_for :teams, controllers: {

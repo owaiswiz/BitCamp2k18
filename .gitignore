@@ -19,7 +19,7 @@
 \.DS_Store
 
 public/assets/
-
+tickets/
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
