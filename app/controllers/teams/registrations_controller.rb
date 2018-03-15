@@ -11,10 +11,17 @@ class Teams::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    puts helpers.registration_closed?
+    if helpers.registration_closed?
+      flash[:alert] = 'Registration is now closed.'
+      redirect_to root_path and return
+    end
+
     params[:team][:members_attributes].each do |key,val|
       val[:college_id], val[:ticket] = helpers.get_encoded_files(val[:college_id], val[:ticket])
     end
     super
+
     if resource.persisted?
       WelcomeMailer.welcome_email(resource).deliver_later
     end

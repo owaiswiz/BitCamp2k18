@@ -1,50 +1,58 @@
-<script>
-  document.addEventListener("turbolinks:load", function() {
-    handleRegistrationForm();
-  })
-</script>
-<div class="form-container">
-  <div class="container">
-    <h1>REGISTER YOUR TEAM</h1>
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
-      <% resource.members.destroy_all and resource.members.build %>
-      <%
-          if params[:team]
-            team_name    = params[:team][:name]
-            college_name = params[:team][:college_name]
-            email        = params[:team][:email]
-            leader_val   = params[:team][:members_attributes]["0"]
-            member_1_val = params[:team][:members_attributes]["1"]
-            member_2_val = params[:team][:members_attributes]["2"]
-            member_3_val = params[:team][:members_attributes]["3"]
-          end
+<% unless registration_closed? %>
+  <script>
+    document.addEventListener("turbolinks:load", function() {
+      handleRegistrationForm();
+    })
+  </script>
+  <div class="form-container">
+    <div class="container">
+      <h1>REGISTER YOUR TEAM</h1>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: {label: false}) do |f| %>
+        <% resource.members.destroy_all and resource.members.build %>
+        <%
+            if params[:team]
+              team_name    = params[:team][:name]
+              college_name = params[:team][:college_name]
+              email        = params[:team][:email]
+              leader_val   = params[:team][:members_attributes]["0"]
+              member_1_val = params[:team][:members_attributes]["1"]
+              member_2_val = params[:team][:members_attributes]["2"]
+              member_3_val = params[:team][:members_attributes]["3"]
+        end
       %>
-      <div class="form-inputs">
-        <%= f.input :name, required: true, placeholder: 'Team Name', autofocus: true, input_html: {value: team_name} %>
-        <%= f.input :college_name, required: true, placeholder: 'College Name', input_html: {value: college_name} %>
+    <div class="form-inputs">
+      <%= f.input :name, required: true, placeholder: 'Team Name', autofocus: true, input_html: {value: team_name} %>
+      <%= f.input :college_name, required: true, placeholder: 'College Name', input_html: {value: college_name} %>
 
-        <%= f.simple_fields_for :members do |leader| %>
-          <%= render partial: 'teams/shared/team_member_block', locals: {main: f, f:leader, default_val: leader_val, name: 'leader'} %>
-        <% end %>
+      <%= f.simple_fields_for :members do |leader| %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {main: f, f:leader, default_val: leader_val, name: 'leader'} %>
+      <% end %>
 
-        <%= f.simple_fields_for :members do |member_1| %>
-          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_1, default_val: member_1_val, name: 'member_1' } %>
-        <% end %>
+      <%= f.simple_fields_for :members do |member_1| %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:member_1, default_val: member_1_val, name: 'member_1' } %>
+      <% end %>
 
-        <%= f.simple_fields_for :members do |member_2| %>
-          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_2, default_val: member_2_val, name: 'member_2', optional: true } %>
-        <% end %>
+      <%= f.simple_fields_for :members do |member_2| %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:member_2, default_val: member_2_val, name: 'member_2', optional: true } %>
+      <% end %>
 
-        <%= f.simple_fields_for :members do |member_3| %>
-          <%= render partial: 'teams/shared/team_member_block', locals: {f:member_3, default_val: member_3_val, name: 'member_3', optional: true } %>
-        <% end %>
-      </div>
+      <%= f.simple_fields_for :members do |member_3| %>
+        <%= render partial: 'teams/shared/team_member_block', locals: {f:member_3, default_val: member_3_val, name: 'member_3', optional: true } %>
+      <% end %>
+    </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign Up", class: 'submit-btn register-new-btn' %>
-      </div>
-    <% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign Up", class: 'submit-btn register-new-btn' %>
+    </div>
+  <% end %>
 
-    <%= render "teams/shared/links" %>
+  <%= render "teams/shared/links" %>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="form-container" style="padding-bottom: 5rem;">
+    <div class="fluid-container">
+      <h1>REGISTRATION IS NOW CLOSED</h1>
+    </div>
+  </div>
+<% end %>

@@ -29,6 +29,7 @@
       <% end %>
     </div>
     <%= yield %>
+    <%= render 'shared/registration_closed' if registration_closed? %>
     <%= render 'shared/footer' %>
     <%= render 'shared/contact' %>
   </body>

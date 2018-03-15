@@ -1,0 +1,27 @@
+<script>
+  document.addEventListener("turbolinks:load", function() {
+    $('.registration-closed-btn').off('click').on('click', function(e){
+      $('#registration-closed-modal').modal('toggle');
+      e.preventDefault();
+  });
+  })
+</script>
+<div class="modal" id="registration-closed-modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Registration is now closed</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="<%= image_path('registration_closed.png') %>" width="96px" style="padding-bottom: 2rem" />
+        <p>Registration is now closed.<br>If you've already registered, please log in to view your team dashboard.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
