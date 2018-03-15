@@ -33,6 +33,9 @@
             <%= link_to 'Register Your Team', new_team_registration_path, class: "btn btn-primary-outline #{'registration-closed-btn' if registration_closed?}", data: {turbolinks: false} unless controller_name == 'registrations' %>
           </li>
         <% else %>
+          <li class="nav-item">
+            <%= link_to 'Apply for Travel Reimbursements', teams_dashboard_travel_reimbursement_path, class: 'nav-link'  %>
+          </li>
           <li class="nav-item button-link">
             <%= link_to 'Dashboard', teams_dashboard_index_path, class: 'btn btn-primary-outline' %>
           </li>
