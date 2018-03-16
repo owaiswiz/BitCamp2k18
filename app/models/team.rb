@@ -18,4 +18,8 @@ class Team < ApplicationRecord
   def leader
     self.members.where(leader: true)[0] || self.members.first
   end
+
+  def ticket_file
+    self.leader.ticket || ''
+  end
 end
