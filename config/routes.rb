@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  get 'view_travel_reimbursement/:file_name' => 'admin#view_travel_reimbursement', file_name: /.*/
+  get 'view_travel_reimbursement/:team_id' => 'admin#view_travel_reimbursement', team_id: /.*/
   namespace :teams do
     get 'dashboard/index'
     post 'dashboard/add_member'

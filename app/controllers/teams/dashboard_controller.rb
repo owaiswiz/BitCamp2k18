@@ -10,14 +10,12 @@ class Teams::DashboardController < ApplicationController
 
   def apply_travel_reimbursement
     ticket_file = params[:member][:ticket]
+    new_ticket_file = nil
     if ticket_file and ticket_file.instance_of? ActionDispatch::Http::UploadedFile
-      file_name = "#{current_team.team_id}.#{ticket_file.original_filename.split('.').last}"
-      dir_path  = Rails.root.join('tickets')
-      file_path = dir_path.join(file_name)
-      Dir.mkdir(dir_path) unless File.exists?(dir_path)
-      File.open(file_path, 'wb') { |f| f.write(ticket_file.read) }
+      encoded_ticket_file = Base64.strict_encode64 ticket_file.read
+      new_ticket_file = 'data:' + ticket_file.content_type + ';base64,' + encoded_ticket_file
     end
-    current_team.leader.update_attributes(ticket: file_name)
+    current_team.leader.update_attributes(ticket: new_ticket_file)
     flash[:notice] = "You've successfully applied for travel reimbursement."
     redirect_to teams_dashboard_index_path
   rescue 

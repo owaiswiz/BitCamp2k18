@@ -15,11 +15,6 @@ RailsAdmin.config do |config|
         "<img src='#{value}' width=300 />".html_safe
       end
     end
-    configure :ticket do
-      pretty_value do # used in list view columns and show views, defaults to formatted_value for non-association fields
-        "<a href='/view_travel_reimbursement/#{value}'>Download Ticket</a>".html_safe if value.present?
-      end
-    end
   end
 
   config.model 'Team' do
@@ -31,7 +26,7 @@ RailsAdmin.config do |config|
       field :members
       field :ticket_file do
         pretty_value do # used in list view columns and show views, defaults to formatted_value for non-association fields
-          "<a href='/view_travel_reimbursement/#{value}'>Download Ticket</a>".html_safe if value.present?
+          "<a href='/view_travel_reimbursement/#{bindings[:object].id}'>Download Ticket</a>".html_safe if value.start_with?('data')
         end
       end
     end

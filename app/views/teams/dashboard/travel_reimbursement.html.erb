@@ -15,7 +15,7 @@
   <%= simple_form_for current_team.leader, url: teams_dashboard_travel_reimbursement_path, defaults: {label: false} do |f| %>
     <div class="d-flex row">
       <div class="members form-container pt-4 text-left bg-white col-sm-12 col-md-12"> 
-        <h2 class="pb-5">Current Status - <%= current_team.leader.ticket.blank? ? "Not Applied" : "Applied" %></h2>
+        <h2 class="pb-5">Current Status - <%= (current_team.leader.ticket.present? and current_team.leader.ticket.start_with?('data')) ? "Applied" : "Not Applied" %></h2>
         <h2>Upload Ticket</h2>
         <ul class='h5 ml-2 mt-4 mb-5'>
           <li class="py-1">Travel Reimbursement capped at a specific amount will only be provided for students coming from outside of Maharashtra.</li>
