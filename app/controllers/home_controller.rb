@@ -14,4 +14,8 @@ class HomeController < ApplicationController
   def schedule
 
   end
+
+  def results
+
+  end
 end

@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/' => 'home#index'
   get '/schedule' => 'home#schedule'
+  get '/results' => 'home#results'
   root to: 'home#index'
 end
